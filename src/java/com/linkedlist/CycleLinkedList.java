@@ -2,6 +2,9 @@ package linkedlist;
 
 //141. Linked List Cycle
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Given head, the head of a linked list, determine if the linked list has a cycle in it.
  * <p>
@@ -27,5 +30,34 @@ public class CycleLinkedList {
         return false;
 
     }
+
+    /**
+     * Intuition
+     * <p>
+     * To detect if a list is cyclic,
+     * we can check whether a node had been visited before.
+     * A natural way is to use a hash table.
+     * <p>
+     * Algorithm
+     * <p>
+     * We go through each node one by one and record each node's
+     * reference (or memory address) in a hash table.
+     * If the current node is null,
+     * we have reached the end of the list and it must not be cyclic.
+     * If current node’s reference is in the hash table, then return true.
+     */
+    public boolean hasCycle2(ListNode head) {
+        Set<ListNode> nodeSeen = new HashSet<>();
+        while (head != null) {
+            if (nodeSeen.contains(head)) {
+                return true;
+            } else {
+                nodeSeen.add(head);
+            }
+            head = head.next;
+        }
+        return false;
+    }
+
 }
 
