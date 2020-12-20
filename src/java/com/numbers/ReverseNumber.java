@@ -13,16 +13,18 @@ package numbers;
  * when the reversed integer overflows.
  */
 public class ReverseNumber {
-    //  static   public int reverse(int x) {
-//        int reverse =0;
-//        while(x !=0){
-//            reverse = reverse * 10;
-//            reverse = reverse + x%10;
-//            x /=10;
-//        }
-//        return reverse;
-//    }
-    static public int reverseNumber(int x) {
+
+    public int reverse(int x) {
+        int reverse = 0;
+        while (x != 0) {
+            reverse = reverse * 10;
+            reverse = reverse + x % 10;
+            x /= 10;
+        }
+        return reverse;
+    }
+
+    public int reverseNumber(int x) {
         int reverse = 0;
         while (x != 0) {
             try {

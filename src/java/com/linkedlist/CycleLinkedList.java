@@ -1,5 +1,4 @@
-package java.com.linkedlist;
-
+package linkedlist;
 
 //141. Linked List Cycle
 
