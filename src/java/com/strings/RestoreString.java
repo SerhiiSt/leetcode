@@ -21,4 +21,22 @@ public class RestoreString {
 
         return String.join("", output);
     }
+
+    public static String restoreString2(String s, int[] indices) {
+        char[] crs = new char[s.length()];
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            crs[indices[i]] = c;
+        }
+        return String.valueOf(crs);
+    }
+
+    public static String restoreString3(String s, int[] indices) {
+        char[] crs = new char[s.length()];
+        for (int i = 0; i < s.length(); i++) {
+            crs[indices[i]] = s.charAt(i);
+        }
+        return String.valueOf(crs);
+    }
+
 }
